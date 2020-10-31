@@ -18,7 +18,7 @@
 
 具体的な記述例
 
-https://twitter.com/Mk2Noko/status/1320718145288454144
+https://twitter.com/Mk2Noko/status/1322350717248569344
 
 マジカミデータ部のツイート
 
