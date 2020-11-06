@@ -1,0 +1,17 @@
+foo
+{% for report in reports %}
+  ## {{report.name }}
+
+  {% for col in report.columns -%}
+    | {{- col -}}
+  {%- endfor %} |
+  {% for col in report.columns -%}
+    | -- 
+  {%- endfor %} |
+  {% for idx, row in report.data.iterrows() -%}
+    {%- for col in report.columns -%}
+      | {{ row[col] }}
+    {%- endfor %} |
+  {% endfor %}
+
+{% endfor %}
