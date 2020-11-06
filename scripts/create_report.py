@@ -74,5 +74,7 @@ templateLoader = jinja2.FileSystemLoader(searchpath="./templates")
 templateEnv = jinja2.Environment(loader=templateLoader)
 TEMPLATE_FILE = "create_report_template.j2"
 template = templateEnv.get_template(TEMPLATE_FILE)
-print(template.render(reports=reports))
+
+with open('../reports/main_report.md', 'wt') as fp:
+    fp.write(template.render(reports=reports))
 
