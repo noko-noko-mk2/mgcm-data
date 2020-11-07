@@ -38,19 +38,19 @@ COLUMN_ROUND = {
     '魔法糸中': 3,
     '魔法糸大': 3,
     'ベル': 1,
-    'ジュエル': 5,
-    'プレミアガチャチケット': 7,
-    'SR以上限定プレミアガチャチケットのかけら': 5,
-    '1984エリザ': 7,
-    '2061エリザ': 7,
-    'クッキングエプロンエリザ': 7,
-    'ホリデーカジュアルエリザ': 7,
-    'ラウンジウェアエリザ': 7,
-    '1984陽彩': 7,
-    '2061陽彩': 7,
-    'クッキングエプロン陽彩': 7,
-    'ホリデーカジュアル陽彩': 7,
-    'ラウンジウェア陽彩': 7,
+    'ジュエル': 4,
+    'プレミアガチャチケット': 5,
+    'SR以上限定プレミアガチャチケットのかけら': 4,
+    '1984エリザ': 5,
+    '2061エリザ': 5,
+    'クッキングエプロンエリザ': 5,
+    'ホリデーカジュアルエリザ': 5,
+    'ラウンジウェアエリザ': 5,
+    '1984陽彩': 5,
+    '2061陽彩': 5,
+    'クッキングエプロン陽彩': 5,
+    'ホリデーカジュアル陽彩': 5,
+    'ラウンジウェア陽彩': 5,
     '俊敏の破宝珠': 3,
     '精密の破宝珠': 3,
     '猛撃の破宝珠': 3,
@@ -74,7 +74,8 @@ templateLoader = jinja2.FileSystemLoader(searchpath="./templates")
 templateEnv = jinja2.Environment(loader=templateLoader)
 TEMPLATE_FILE = "create_report_template.j2"
 template = templateEnv.get_template(TEMPLATE_FILE)
+print(template.render(reports=reports))
 
-with open('../reports/main_report.md', 'wt') as fp:
-    fp.write(template.render(reports=reports))
+with open('../reports/main_report.md', 'wt') as f:
+    f.write(template.render(reports=reports))
 
