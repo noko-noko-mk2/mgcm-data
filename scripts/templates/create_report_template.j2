@@ -1,7 +1,9 @@
+## 1周ごとの期待値
+
 ※数値は獲得総数を周回数で割ったものです
 
 {% for report in reports %}
-  ## {{report.name }}
+  ### {{report.name }}
 
   {% for col in report.columns -%}
     | {{- col -}}
@@ -10,6 +12,45 @@
     | -- 
   {%- endfor %} |
   {% for idx, row in report.data.iterrows() -%}
+    {%- for col in report.columns -%}
+      | {{ row[col] }}
+    {%- endfor %} |
+  {% endfor %}
+
+{% endfor %}
+
+## スタミナ40換算の期待値
+
+{% for report in reports %}
+  ### {{report.name }}
+
+  {% for col in report.columns -%}
+    | {{- col -}}
+  {%- endfor %} |
+  {% for col in report.columns -%}
+    | -- 
+  {%- endfor %} |
+  {% for idx, row in report.data40.iterrows() -%}
+    {%- for col in report.columns -%}
+      | {{ row[col] }}
+    {%- endfor %} |
+  {% endfor %}
+
+{% endfor %}
+
+
+## 総計
+
+{% for report in reports %}
+  ### {{report.name }}
+
+  {% for col in report.columns -%}
+    | {{- col -}}
+  {%- endfor %} |
+  {% for col in report.columns -%}
+    | -- 
+  {%- endfor %} |
+  {% for idx, row in report.data_sum.iterrows() -%}
     {%- for col in report.columns -%}
       | {{ row[col] }}
     {%- endfor %} |
