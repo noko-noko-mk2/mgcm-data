@@ -41,7 +41,7 @@
 
 
 
-
+<div style="margin-bottom: 3em;"></div>
 
 ## スタミナ40換算の期待値
 
@@ -84,7 +84,7 @@
 
 
 
-
+<div style="margin-bottom: 3em;"></div>
 
 ## 総計
 
